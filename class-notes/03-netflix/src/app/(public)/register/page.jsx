@@ -1,6 +1,7 @@
 "use client";
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import GoogleIcon from "/public/icons/GoogleIcon";
+import { YetkiContext } from "@/context/AuthContext";
 
 const Register = () => {
   const [info, setInfo] = useState({
@@ -10,12 +11,19 @@ const Register = () => {
     password: "",
   });
 
+  const { createUser } = useContext(YetkiContext);
+
+  //* dest
+  const { firstName, lastName, email, password } = info;
+
   const onChange = (e) => setInfo({ ...info, [e.target.name]: e.targer.value });
 
   const gonderDatabase = (e) => {
     e.preventDefault();
 
     const displayName = `${firstName} ${lastName}`; //* hem inputlari doldurarak hem de Google ile giris yapildiginda browser'da sag üst kösede firstName ile lastName'i gösterebilmek icin displayName tanimlanir.
+
+    createUser(email, password, displayName);
   };
 
   return (
