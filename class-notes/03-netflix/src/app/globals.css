@@ -7,7 +7,7 @@ html {
 }
 body {
   @apply bg-zinc-900 min-h-full;
-  color:white;
+  color: white;
 }
 
 /** element bazında default olarak vermek istediğimiz stilleri base layer'da veriyoruz */
@@ -46,7 +46,6 @@ input:-webkit-autofill:focus input:-webkit-autofill {
   -webkit-box-shadow: 0 0 0px 0px #28292d inset !important;
   transition: background-color 5000s ease-in-out 0s !important;
 }
-
 
 /* scroll bar moviecard lar*/
 ::-webkit-scrollbar {
