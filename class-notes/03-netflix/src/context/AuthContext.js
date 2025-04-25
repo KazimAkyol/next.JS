@@ -3,7 +3,12 @@ import React, { createContext } from "react";
 import { auth } from "@/auth/firebase";
 import { useRouter } from "next/navigation";
 import { toastErrorNotify, toastSuccessNotify } from "@/helpers/ToastNotify";
-import { createUserWithEmailAndPassword, GoogleAuthProvider, signInWithPopup } from "firebase/auth";
+import {
+  createUserWithEmailAndPassword,
+  GoogleAuthProvider,
+  signInWithEmailAndPassword,
+  signInWithPopup,
+} from "firebase/auth";
 
 //* auth(firebase) islemlerini yapacagimiz context alani actik:
 export const YetkiContext = createContext();
@@ -26,21 +31,38 @@ const AuthContextProvider = ({ children }) => {
     }
   };
 
+  //* Google ile giris:
   const signUpGooglE = () => {
     //* google hesaplarına ulaşmak için firebase metodu
     const provider = new GoogleAuthProvider();
 
-    //* açılır pencere ile giriş yapılması için firebase metodu
+    //* açılır pencere ile giriş yapılması için firebase metodu:
 
     signInWithPopup(auth, provider)
-      .then((result) => {})
+      .then((result) => {
+        router.push("/profile");
+        toastSuccessNotify("Google ile giris basarili");
+      })
       .catch((error) => {
         console.log(error);
       });
   };
 
+  //* kayit olduktan sonra login islemini yapan firebase metodu:
+
+  const login = async (email, password) => {
+    try {
+      await signInWithEmailAndPassword(auth, email, password);
+
+      router.push("/profile");
+      toastSuccessNotify("login basarili");
+    } catch (error) {
+      toastErrorNotify(error.message);
+    }
+  };
+
   return (
-    <YetkiContext.Provider value={{ createUser }}>
+    <YetkiContext.Provider value={{ createUser, signUpGooglE, login }}>
       {children}
     </YetkiContext.Provider>
   );

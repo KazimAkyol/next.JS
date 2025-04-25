@@ -11,7 +11,7 @@ const Register = () => {
     password: "",
   });
 
-  const { createUser } = useContext(YetkiContext);
+  const { createUser, signUpGooglE } = useContext(YetkiContext);
 
   //* dest
   const { firstName, lastName, email, password } = info;
@@ -81,7 +81,8 @@ const Register = () => {
             <button className="btn-danger">Register</button>
             <button
               type="button"
-              className="btn-danger flex justify-between text-center "
+              className="btn-danger flex justify-between text-center"
+              onClick={signUpGooglE}
             >
               Continue with Google
               <GoogleIcon />
