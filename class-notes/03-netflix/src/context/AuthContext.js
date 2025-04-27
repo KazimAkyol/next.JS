@@ -1,4 +1,5 @@
 "use client";
+
 import React, { createContext } from "react";
 import { auth } from "@/auth/firebase";
 import { useRouter } from "next/navigation";
@@ -16,11 +17,11 @@ export const YetkiContext = createContext();
 const AuthContextProvider = ({ children }) => {
   const router = useRouter();
 
-  //* yeni bir kullanici olusturmak icin kullanilan firebase metodu
+  //* yeni bir kullanici olusturmak icin kullanilan firebase metodu:
 
   const createUser = async (email, password, displayName) => {
     try {
-      //? sitede ilk defa kullanıcı adı oluşturmak için kullanılan firebase metodu
+      //* sitede ilk defa kullanıcı adı oluşturmak için kullanılan firebase metodu:
       await createUserWithEmailAndPassword(auth, email, password);
 
       toastSuccessNotify("Register basarili");
@@ -33,7 +34,7 @@ const AuthContextProvider = ({ children }) => {
 
   //* Google ile giris:
   const signUpGooglE = () => {
-    //* google hesaplarına ulaşmak için firebase metodu
+    //* Google hesaplarına ulaşmak için firebase metodu:
     const provider = new GoogleAuthProvider();
 
     //* açılır pencere ile giriş yapılması için firebase metodu:
