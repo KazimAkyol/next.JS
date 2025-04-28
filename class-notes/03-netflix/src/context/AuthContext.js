@@ -76,7 +76,7 @@ const AuthContextProvider = ({ children }) => {
   };
 
   const logOut = () => {
-    signOut();
+    signOut(auth);
     toastSuccessNotify("cikis basarili");
   };
 

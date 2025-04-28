@@ -5,7 +5,7 @@ export const getirMovies = async (type) => {
     `https://api.themoviedb.org/3/movie/${type}?api_key=${API_KEY}`
   );
 
-  const data = res.json();
+  const { results } = await res.json();
 
-  console.log(data);
+  return results;
 };

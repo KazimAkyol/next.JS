@@ -6,9 +6,8 @@ const nextConfig = {
         protocol: "https",
         hostname: "image.tmdb.org",
       },
-     
     ],
   },
 };
-// nextConfig.js deki Image yi kullanacaksak dışarıdan aldığımız bütün resimlerin yollarını buraya yazmalıyız
+//* nextConfig.js deki Image yi kullanacaksak dışarıdan aldığımız bütün resimlerin yollarını buraya yazmalıyız
 export default nextConfig;
