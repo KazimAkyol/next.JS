@@ -1,13 +1,12 @@
-"use client";
-
+import React from "react";
 import { getirMovies } from "@/helpers/movieFunctions";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
-import React from "react";
 
 const MovieSection = async ({ type }) => {
   const router = useRouter();
   const filmler = await getirMovies(type);
+ 
 
   return (
     <div className="mb-4">
@@ -16,7 +15,7 @@ const MovieSection = async ({ type }) => {
       </p>
 
       <div className="grid grid-flow-col gap-2 overflow-x-scroll ">
-        {filmler.map((a, i) => (
+        {filmler?.map((film) => (
           <div
             onClick={() => router.push("/movies/" + a.id)}
             className="w-40 h-[240] cursor-pointer relative"
