@@ -27,7 +27,6 @@ const AuthContextProvider = ({ children }) => {
   }, []);
 
   //* yeni bir kullanici olusturmak icin kullanilan firebase metodu:
-
   const createUser = async (email, password, displayName) => {
     try {
       //* sitede ilk defa kullanıcı adı oluşturmak için kullanılan firebase metodu:
@@ -38,7 +37,6 @@ const AuthContextProvider = ({ children }) => {
       });
 
       toastSuccessNotify("Register basarili");
-
       router.push("/profile");
     } catch (error) {
       toastErrorNotify(error.message);
@@ -51,7 +49,6 @@ const AuthContextProvider = ({ children }) => {
     const provider = new GoogleAuthProvider();
 
     //* açılır pencere ile giriş yapılması için firebase metodu:
-
     signInWithPopup(auth, provider)
       .then((result) => {
         router.push("/profile");
@@ -62,8 +59,7 @@ const AuthContextProvider = ({ children }) => {
       });
   };
 
-  //* kayit olduktan sonra login islemini yapan firebase metodu:
-
+  //* kayit olduktan sonra giris icin login'den cagirilacak firebase metodu:
   const login = async (email, password) => {
     try {
       await signInWithEmailAndPassword(auth, email, password);
