@@ -1,14 +1,18 @@
 "use client";
 import React, { useContext } from "react";
 import { YetkiContext } from "@/context/AuthContext";
+import { useRouter } from "next/navigation";
 
 const CardContainer = () => {
   const { currentUser } = useContext(YetkiContext);
+  let router = useRouter();
+
   return (
     <div className="flex flex-col md:flex-row items-center justify-center gap-8 mt-10">
       <div className="w-44 mx-auto cursor-pointer group">
         <div className="w-44 h-44 rounded-md border-2 border-transparent group-hover:border-white overflow-hidden ">
           <img
+            onClick={() => router.push("/movies")}
             src="./images/default-red.png"
             alt="profile"
             className="w-max h-max object-contain"
