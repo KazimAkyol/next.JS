@@ -32,7 +32,7 @@ const AuthContextProvider = ({ children }) => {
     try {
       //* sitede ilk defa kullanıcı adı oluşturmak için kullanılan firebase metodu:
       await createUserWithEmailAndPassword(auth, email, password);
-      //? kullanıcı profilini güncellemek için kullanılan firebase metodu
+      //* kullanıcı profilini güncellemek için kullanılan firebase metodu:
       await updateProfile(auth.currentUser, {
         displayName,
       });
@@ -80,7 +80,7 @@ const AuthContextProvider = ({ children }) => {
     toastSuccessNotify("cikis basarili");
   };
 
-  //? Kullanıcının signin olup olmadığını takip eden ve kullanıcı değiştiğinde yeni kullanıcıyı response olarak dönen firebase metodu
+  //* Kullanıcının signIn olup olmadığını takip eden ve kullanıcı değiştiğinde yeni kullanıcıyı response olarak dönen firebase metodu:
   const userTakip = () => {
     onAuthStateChanged(auth, (user) => {
       if (user) {

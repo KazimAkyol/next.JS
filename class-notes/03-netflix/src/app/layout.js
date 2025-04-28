@@ -4,7 +4,7 @@ import { ToastContainer } from "react-toastify";
 import AuthContextProvider from "@/context/AuthContext";
 import Navbar from "@/components/Navbar";
 
-// burası approuter gibi rotaları yönetiyor
+//* burası React'taki AppRouter gibi rotaları yönetiyor.
 export const metadata = {
   title: "Netflix",
   description: "A movie platform",

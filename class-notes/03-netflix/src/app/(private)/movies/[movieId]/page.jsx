@@ -1,7 +1,8 @@
 import React from "react";
 import { getirVideoKey } from "@/helpers/movieFunctions";
-
 const MovieDetail = async ({ params: { movieId } }) => {
+  //* yol ile gelen id yi üstte yakaladık, dosyanın adı ile buradaki yakalanan isim aynı olmalı
+  // console.log(movieId);
   const videoKey = await getirVideoKey(movieId);
 
   return (

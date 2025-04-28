@@ -3,11 +3,11 @@
 import React from "react";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
-
 const MovieCard = ({ id, vote_average, poster_path }) => {
   const router = useRouter();
+
   return (
-    //* herhangi bir filme tiklayinca id'sini rota yaptik ve dynamic rotayi [] parantezle dosya acarak yakalayacagiz
+    //* herhangi bir filme tıklayınca id'sini rota yaptık ve dynamic rotayı [] parantezle dosya acarak yakalayacagız:
     <div
       onClick={() => router.push("/movies/" + id)}
       className="w-40 h-[240] cursor-pointer relative"

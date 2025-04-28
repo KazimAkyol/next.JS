@@ -28,7 +28,7 @@ const Navbar = () => {
     const handleScroll = () => {
       // console.log(window.scrollY);
       //* scrollun üstteki kısmı 60px i geçince opacity olsun
-      const TOP_OFFSET = 120;
+      const TOP_OFFSET = 60;
       if (window.scrollY >= TOP_OFFSET) {
         setShowBackground(true);
       } else {
