@@ -7,7 +7,6 @@ const MovieSection = async ({ type }) => {
   const router = useRouter();
   const filmler = await getirMovies(type);
  
-
   return (
     <div className="mb-4">
       <p className="text-white  text-md lg:text-2xl font-semibold mb-4">
