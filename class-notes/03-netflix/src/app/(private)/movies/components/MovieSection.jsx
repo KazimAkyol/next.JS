@@ -1,8 +1,15 @@
+import { getirMovies } from '@/helpers/movieFunctions'
 import React from 'react'
 
-const MovieSection = () => {
+const MovieSection = async () => {
+
+   const filmler = await getirMovies("popular")
+
+   console.log(filmler);
   return (
-    <div>MovieSection</div>
+    <div>
+        
+    </div>
   )
 }
 
