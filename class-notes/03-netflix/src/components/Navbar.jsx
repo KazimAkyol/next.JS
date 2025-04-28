@@ -1,5 +1,5 @@
-"use client"
-import React, { useEffect, useState } from "react";
+"use client";
+import React, { useContext, useEffect, useState } from "react";
 import Link from "next/link";
 import { Fragment } from "react";
 import {
@@ -10,28 +10,24 @@ import {
   MenuItems,
   Transition,
 } from "@headlessui/react";
-
+import { YetkiContext } from "@/context/AuthContext";
 
 function classNames(...classes) {
   return classes.filter(Boolean).join(" ");
 }
 
 const Navbar = () => {
-
-
-
   const [showBackground, setShowBackground] = useState(false);
- 
 
-    const currentUser = { displayName: "ashley miller" };
+  const { currentUser, logOut } = useContext(YetkiContext);
 
-
+  // const currentUser = { displayName: "ashley miller" };
 
   useEffect(() => {
     const handleScroll = () => {
       // console.log(window.scrollY);
-      // scrollun üstteki kısmı 60px i geçince opacity olsun
-      const TOP_OFFSET = 60;
+      //* scrollun üstteki kısmı 60px i geçince opacity olsun
+      const TOP_OFFSET = 120;
       if (window.scrollY >= TOP_OFFSET) {
         setShowBackground(true);
       } else {
@@ -89,7 +85,7 @@ const Navbar = () => {
                   <MenuItems className="absolute right-0 z-10 mt-2 w-48 origin-top-right rounded-md bg-white py-1 shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
                     <MenuItem>
                       <Link
-                        href=""
+                        href="/register"
                         className={classNames(
                           "bg-gray-100",
                           "block px-4 py-2 text-sm text-gray-700 hover:bg-slate-200 cursor-pointer"
@@ -100,7 +96,7 @@ const Navbar = () => {
                     </MenuItem>
                     <MenuItem>
                       <Link
-                        href=""
+                        href="/login"
                         className={classNames(
                           "bg-gray-100",
                           "block px-4 py-2 text-sm text-gray-700 hover:bg-slate-200 cursor-pointer"
@@ -111,7 +107,7 @@ const Navbar = () => {
                     </MenuItem>
                     <MenuItem>
                       <Link
-                        href=""
+                        href="/profile"
                         className={classNames(
                           "bg-gray-100",
                           "block px-4 py-2 text-sm text-gray-700 hover:bg-slate-200 cursor-pointer"
@@ -127,7 +123,7 @@ const Navbar = () => {
                           "block px-4 py-2 text-sm text-gray-700 hover:bg-slate-200 cursor-pointer"
                         )}
                         role="button"
-                      
+                        onClick={() => logOut()}
                       >
                         Log out
                       </span>
