@@ -76,11 +76,11 @@ const AuthContextProvider = ({ children }) => {
     toastSuccessNotify("cikis basarili");
   };
 
-  //* Kullanıcının signIn olup olmadığını takip eden ve kullanıcı değiştiğinde yeni kullanıcıyı response olarak dönen firebase metodu:
+  //* Kullanıcının signIn olup/olmadığını takip eden ve kullanıcı değiştiğinde yeni kullanıcıyı response olarak dönen firebase metodu:
   const userTakip = () => {
     onAuthStateChanged(auth, (user) => {
       if (user) {
-        console.log(user);
+        // console.log(user);
 
         const { email, displayName, photoURL } = user;
 

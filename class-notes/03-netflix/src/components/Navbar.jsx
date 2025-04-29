@@ -22,8 +22,6 @@ const Navbar = () => {
 
   const { currentUser, logOut } = useContext(YetkiContext);
 
-  // const currentUser = { displayName: "ashley miller" };
-
   useEffect(() => {
     const handleScroll = () => {
       // console.log(window.scrollY);

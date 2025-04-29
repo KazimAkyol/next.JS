@@ -31,7 +31,7 @@ const CardContainer = () => {
           />
         </div>
         <div className="mt-4 text-gray-400 text-2xl text-center group-hover:text-white ">
-          Guest-2
+          Guest-1
         </div>
 
         <div className="w-44 h-44 rounded-md border-2 border-transparent group-hover:border-white overflow-hidden ">
@@ -42,7 +42,7 @@ const CardContainer = () => {
           />
         </div>
         <div className="mt-4 text-gray-400 text-2xl text-center group-hover:text-white ">
-          Guest-3
+          Guest-2
         </div>
 
         <div className="w-44 h-44 rounded-md border-2 border-transparent group-hover:border-white overflow-hidden ">
@@ -53,7 +53,7 @@ const CardContainer = () => {
           />
         </div>
         <div className="mt-4 text-gray-400 text-2xl text-center group-hover:text-white ">
-          Guest-4
+          Guest-3
         </div>
       </div>
     </div>
